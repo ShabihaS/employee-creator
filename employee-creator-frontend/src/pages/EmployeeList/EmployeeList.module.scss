@@ -1,0 +1,162 @@
+@use '../../styles/variables' as *;
+@use '../../styles/breakpoints' as *;
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: $spacing-xl;
+  margin-bottom: $spacing-xxl;
+
+  h1 {
+    margin: 0 0 $spacing-sm;
+    font-size: $font-size-xl;
+  }
+
+  p {
+    margin: 0;
+    color: $color-text-muted;
+  }
+}
+
+.addButton {
+  display: inline-block;
+  padding: 11px 24px;
+  border-radius: $radius-md;
+  background: $color-primary;
+  color: $color-white;
+  text-decoration: none;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.employeeList {
+  display: grid;
+  gap: $spacing-lg;
+}
+
+.employeeCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-xl;
+  padding: $spacing-xl;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  background: $color-white;
+
+  h2 {
+    margin: 0 0 $spacing-sm;
+    font-size: $font-size-lg;
+  }
+
+  p {
+    margin: 4px 0;
+    color: $color-text-muted;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.editButton {
+  display: inline-block;
+  padding: 11px 24px;
+  border-radius: $radius-md;
+  background: $color-primary;
+  color: $color-white;
+  text-decoration: none;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.removeButton {
+  padding: 9px 16px;
+  border-radius: $radius-sm;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  cursor: pointer;
+}
+
+.removeButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.statusMessage {
+  margin: 40px 0;
+  text-align: center;
+  color: $color-text-muted;
+}
+
+.errorMessage {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.errorMessage p {
+  margin-bottom: $spacing-lg;
+}
+
+.deleteError {
+  margin: 20px 0;
+  padding: $spacing-md $spacing-lg;
+  border: 1px solid $color-danger;
+  border-radius: $radius-md;
+  background: $color-error-background;
+  color: $color-danger-text;
+  font-weight: 500;
+}
+
+@include tablet {
+  .page {
+    padding: 20px 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .addButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .employeeCard {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .editButton,
+  .actions button {
+    flex: 1;
+    text-align: center;
+  }
+}
