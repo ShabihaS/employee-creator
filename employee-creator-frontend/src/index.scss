@@ -1,8 +1,21 @@
+@use './styles/variables' as *;
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: $font-family-base;
+  color: $color-text;
+  background: $color-background;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
 }
