@@ -8,7 +8,7 @@ export interface Employee {
   residentialAddress: string
   contractType: 'PERMANENT' | 'CONTRACT'
   startDate: string
-  endDate?: string
+  finishedDate?: string
   ongoing: boolean
   employmentType: 'FULL_TIME' | 'PART_TIME'
   hoursPerWeek: number

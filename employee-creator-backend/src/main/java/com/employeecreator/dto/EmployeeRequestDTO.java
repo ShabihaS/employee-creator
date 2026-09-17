@@ -50,6 +50,8 @@ public class EmployeeRequestDTO {
   @Max(value = 168, message = "Hours per week cannot exceed 168")
   private Integer hoursPerWeek;
 
+  //  Getters and setters
+
   public EmployeeRequestDTO() {
   }
 
@@ -149,5 +151,5 @@ public class EmployeeRequestDTO {
     this.hoursPerWeek = hoursPerWeek;
   }
 
-  // Generate getters and setters
+  
 }

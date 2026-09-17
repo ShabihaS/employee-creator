@@ -41,7 +41,7 @@ export const employeeSchema = z
       .string()
       .min(1, 'Start date is required'),
 
-    endDate: z
+    finishedDate: z
       .string()
       .optional(),
 
@@ -60,10 +60,10 @@ export const employeeSchema = z
       .max(168, 'Hours per week cannot exceed 168'),
   })
   .superRefine((data, ctx) => {
-    if (data.ongoing && data.endDate) {
+    if (data.ongoing && data.finishedDate) {
       ctx.addIssue({
         code: 'custom',
-        path: ['endDate'],
+        path: ['finishedDate'],
         message: 'End date must be empty when ongoing is selected',
       })
     }
@@ -71,11 +71,11 @@ export const employeeSchema = z
     if (
       data.contractType === 'CONTRACT' &&
       !data.ongoing &&
-      !data.endDate
+      !data.finishedDate
     ) {
       ctx.addIssue({
         code: 'custom',
-        path: ['endDate'],
+        path: ['finishedDate'],
         message: 'End date is required for a contract employee',
       })
     }

@@ -84,7 +84,7 @@ public class EmployeeService {
     return convertToResponseDTO(updatedEmployee);
   }
 
-  // Delete
+  // Delete employee by id
   public void deleteEmployee(Long id) {
 
     Employee employee = employeeRepository.findById(id)
@@ -92,6 +92,8 @@ public class EmployeeService {
 
     employeeRepository.delete(employee);
   }
+
+  // Convert Employee entity to EmployeeResponseDTO
 
   private EmployeeResponseDTO convertToResponseDTO(Employee employee) {
 

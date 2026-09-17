@@ -48,7 +48,7 @@ const EmployeeForm = ({
       residentialAddress: '',
       contractType: 'PERMANENT',
       startDate: '',
-      endDate: '',
+      finishedDate: '',
       ongoing: false,
       employmentType: 'FULL_TIME',
       hoursPerWeek: 38,
@@ -244,18 +244,18 @@ const EmployeeForm = ({
         </div>
 
         <div className={styles.field}>
-          <label htmlFor="endDate">End Date</label>
+          <label htmlFor="finishedDate">End Date</label>
 
           <input
-  id="endDate"
+  id="finishedDate"
   type="date"
   disabled={isOngoing}
-  {...register('endDate')}
+  {...register('finishedDate')}
 />
 
-          {errors.endDate && (
+          {errors.finishedDate && (
             <p className={styles.error}>
-              {errors.endDate.message}
+              {errors.finishedDate.message}
             </p>
           )}
         </div>
@@ -266,7 +266,7 @@ const EmployeeForm = ({
     {...register('ongoing', {
       onChange: (event) => {
         if (event.target.checked) {
-          setValue('endDate', '')
+          setValue('finishedDate', '')
         }
       },
     })}

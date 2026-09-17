@@ -62,7 +62,7 @@ const EditEmployee = () => {
     residentialAddress: employee.residentialAddress,
     contractType: employee.contractType,
     startDate: employee.startDate,
-    endDate: employee.endDate ?? '',
+    finishedDate: employee.finishedDate ?? '',
     ongoing: employee.ongoing,
     employmentType: employee.employmentType,
     hoursPerWeek: employee.hoursPerWeek,
